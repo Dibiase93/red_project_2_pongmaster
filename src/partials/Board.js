@@ -21,17 +21,20 @@ export default class Board {
         line.setAttributeNS(null, "stroke-dasharray", '15');
         line.setAttributeNS(null, 'stroke-width', '4');
 
-        // let centerCircle = document.createElementNS(SVG_NS, 'circle');
-        // centerCircle.setAttributeNS(null, 'cx', '256');
-        // centerCircle.setAttributeNS(null, 'cy', '128');
-        // centerCircle.setAttributeNS(null, 'r', '50');
-        // centerCircle.setAttributeNS(null, 'stroke-width', '3');
-        // centerCircle.setAttributeNS(null, 'stroke', '#912424');
-        // centerCircle.setAttributeNS(null, 'stroke-dasharray', '10, 5, 5');
+        let centerCircle = document.createElementNS(SVG_NS, 'circle');
+        centerCircle.setAttributeNS(null, 'cx', '256');
+        centerCircle.setAttributeNS(null, 'cy', '128');
+        centerCircle.setAttributeNS(null, 'r', '50');
+        centerCircle.setAttributeNS(null, 'stroke-width', '3');
+        centerCircle.setAttributeNS(null, 'stroke', '#912424');
+        centerCircle.setAttributeNS(null, 'stroke-dasharray', '10, 5');
 
 
         // svg.appendChild(centerCircle);
+        
         svg.appendChild(rect);
+        svg.appendChild(centerCircle);
         svg.appendChild(line);
+        
     }
 }
