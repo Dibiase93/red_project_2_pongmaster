@@ -29,12 +29,9 @@ export default class Board {
         centerCircle.setAttributeNS(null, 'stroke', '#912424');
         centerCircle.setAttributeNS(null, 'stroke-dasharray', '10, 5');
 
-
-        // svg.appendChild(centerCircle);
-        
         svg.appendChild(rect);
         svg.appendChild(centerCircle);
         svg.appendChild(line);
-        
+
     }
 }
