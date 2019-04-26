@@ -44,11 +44,22 @@ export default class Game {
     console.log(this.player1)
     console.log(this.player2)
 
+    document.addEventListener('keydown', event => {
+    switch(event.key){
+      case KEYS.spaceBar:
+        this.pause = !this.pause;
+      break;
+    }
+    });
     // end of constructor
   }
 
   render() {
     // More code goes here....
+   if (this.pause) {
+     return;
+   }
+
     this.gameElement.innerHTML = '';
 
     let svg = document.createElementNS(SVG_NS, "svg");
