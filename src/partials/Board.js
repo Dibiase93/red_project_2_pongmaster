@@ -22,12 +22,13 @@ export default class Board {
         line.setAttributeNS(null, 'stroke-width', '4');
 
         let centerCircle = document.createElementNS(SVG_NS, 'circle');
-        centerCircle.setAttributeNS(null, 'cx', '256');
-        centerCircle.setAttributeNS(null, 'cy', '128');
-        centerCircle.setAttributeNS(null, 'r', '50');
+        centerCircle.setAttributeNS(null, 'cx', this.width / 2);
+        centerCircle.setAttributeNS(null, 'cy', this.height / 2);
+        centerCircle.setAttributeNS(null, 'r', '100');
         centerCircle.setAttributeNS(null, 'stroke-width', '3');
         centerCircle.setAttributeNS(null, 'stroke', '#912424');
         centerCircle.setAttributeNS(null, 'stroke-dasharray', '10, 5');
+        centerCircle.setAttributeNS(null, "fill", "#353535");
 
         svg.appendChild(rect);
         svg.appendChild(centerCircle);

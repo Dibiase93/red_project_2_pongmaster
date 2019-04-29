@@ -1,4 +1,4 @@
-import { SVG_NS, KEYS } from "../settings";
+import { SVG_NS } from "../settings";
 
 
 
@@ -71,6 +71,7 @@ export default class Ball {
     render(svg, player1, player2) {
         let circle = document.createElementNS(SVG_NS, 'circle')
 
+
         //    update x position with vector direction 60 times a second.
         this.x += this.vx;
         this.y += this.vy;
@@ -87,17 +88,25 @@ export default class Ball {
 
         const rightGoal = this.x + this.radius >= this.boardWidth;
         const leftGoal = this.x - this.radius <= 0;
+    
+        
         if(rightGoal) {
             this.goal(player1, 1);
-            this.goal(player2, -1)
+            this.goal(player2, -1);
             this.direction = 1;
             
         } else if (leftGoal) {
             this.goal(player2, 1);
-            this.goal(player1, -1)
-            this.direction = -1;   
+            this.goal(player1, -1);
+            this.direction = -1;     
         }
-    }
 
+        if (player1.score === 5) {
+            alert("Player 1 WINS! Congrats");
+        } else if (player2.score === 5) {
+            alert("Player 2 WINS! Congrats");
+        }
+
+}
 }
   //end of Ball class

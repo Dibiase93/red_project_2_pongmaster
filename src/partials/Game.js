@@ -44,12 +44,14 @@ export default class Game {
       "blue",
     );
 
-    this.score1 = new Score(this.width / 2 - 50, 30, 30);
-    this.score2 = new Score(this.width / 2 + 25, 30, 30);
+    this.score1 = new Score(this.width / 2 - 50, 30, 30, "red");
+    this.score2 = new Score(this.width / 2 + 25, 30, 30, "blue");
 
-    this.ball = new Ball(8, this.width, this.height)
-    console.log(this.player1)
-    console.log(this.player2)
+    // this.winner1 = new Winner(this.width / 2 - 50, 30, 30, "red");
+    // this.winner2 = new Winner(this.width / 2 + 25, 30, 30, "blue");
+
+    this.ball = new Ball(8, this.width, this.height);
+
 
     document.addEventListener('keydown', event => {
     switch(event.key){
@@ -58,6 +60,7 @@ export default class Game {
       break;
     }
     });
+
     // end of constructor
   }
 
@@ -66,7 +69,7 @@ export default class Game {
    if (this.pause) {
      return;
    }
-
+   
     this.gameElement.innerHTML = '';
 
     let svg = document.createElementNS(SVG_NS, "svg");
@@ -83,6 +86,6 @@ export default class Game {
     this.ball.render(svg, this.player1, this.player2);
     this.score1.render(svg, this.player1.score);
     this.score2.render(svg, this.player2.score);
-
+  
   }
 }
